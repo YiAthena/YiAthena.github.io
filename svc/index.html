@@ -9,17 +9,24 @@
   table { margin: 20px auto; border-collapse: collapse; width: 80%; }
   th, td { border: 1px solid #ddd; padding: 8px; }
   audio { width: 100%; } /* Adjust audio player size */
+  .bold { font-weight: bold; } /* Class for bold styling */
+  .left-align { text-align: left; display: block; /* Ensures full width for alignment */ margin: auto; width: 80%; } /* Class for left-aligned text */
 </style>
 </head>
 <body>
 <h1>Zero-Shot Sing Voice Conversion: built upon clustering-based phoneme representations</h1>
 
+<p class="bold" style="margin-bottom: 0;">Ablation study 1</p>
+<p class="left-align">A dataset with a higher number of samples per speaker improves the model's ability to minimize timbre leakage. However, in datasets with massive user samples where each speaker has only 1-2 samples, the problem of timbre leakage becomes significantly prominent.</p>
+
 <table>
   <tr><th>Row/Column</th><th>Column 1</th><th>Column 2</th><th>Audio 1</th><th>Audio 2</th><th>Audio 3</th><th>Audio 4</th></tr>
-  <tr><td>Row 1</td><td>Data</td><td>Data</td><td><a href="audio1.mp3">Audio 1</a></td><td><a href="audio2.mp3">Audio 2</a></td><td><a href="audio3.mp3">Audio 3</a></td><td><a href="audio4.mp3">Audio 4</a></td></tr>
-  <tr><td>Row 2</td><td>Data</td><td>Data</td><td><a href="audio5.mp3">Audio 5</a></td><td><a href="audio6.mp3">Audio 6</a></td><td><a href="audio7.mp3">Audio 7</a></td><td><a href="audio8.mp3">Audio 8</a></td></tr>
-  <tr><td>Row 3</td><td>Data</td><td>Data</td><td><a href="audio9.mp3">Audio 9</a></td><td><a href="audio10.mp3">Audio 10</a></td><td><a href="audio11.mp3">Audio 11</a></td><td><a href="audio12.mp3">Audio 12</a></td></tr>
-  <tr><td>Row 4</td><td>Data</td><td>Data</td><td><a href="audio13.mp3">Audio 13</a></td><td><a href="audio14.mp3">Audio 14</a></td><td><a href="audio15.mp3">Audio 15</a></td><td><a href="audio16.mp3">Audio 16</a></td></tr>
+  <tr><td rowspan="2">Rows 1 & 2</td><td rowspan="6"><audio controls src="Samples/045_17_0.wav"></audio></td><td><audio controls src="audio1.mp3"></audio></td><td><audio controls src="audio2.mp3"></audio></td><td><audio controls src="audio3.mp3"></audio></td><td><audio controls src="audio4.mp3"></audio></td></tr>
+  <tr><td><audio controls src="audio5.mp3"></audio></td><td><audio controls src="audio6.mp3"></audio></td><td><audio controls src="audio7.mp3"></audio></td><td><audio controls src="audio8.mp3"></audio></td></tr>
+  <tr><td rowspan="2">Rows 3 & 4</td><td><audio controls src="audio9.mp3"></audio></td><td><audio controls src="audio10.mp3"></audio></td><td><audio controls src="audio11.mp3"></audio></td><td><audio controls src="audio12.mp3"></audio></td></tr>
+  <tr><td><audio controls src="audio13.mp3"></audio></td><td><audio controls src="audio14.mp3"></audio></td><td><audio controls src="audio15.mp3"></audio></td><td><audio controls src="audio16.mp3"></audio></td></tr>
+  <tr><td rowspan="2">Rows 5 & 6</td><td><audio controls src="audio17.mp3"></audio></td><td><audio controls src="audio18.mp3"></audio></td><td><audio controls src="audio19.mp3"></audio></td><td><audio controls src="audio20.mp3"></audio></td></tr>
+  <tr><td><audio controls src="audio21.mp3"></audio></td><td><audio controls src="audio22.mp3"></audio></td><td><audio controls src="audio23.mp3"></audio></td><td><audio controls src="audio24.mp3"></audio></td></tr>
 </table>
 
 <!-- Repeat the table structure for two more tables -->
