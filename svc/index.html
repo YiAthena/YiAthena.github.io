@@ -20,16 +20,54 @@
 <p class="left-align">A dataset with a higher number of samples per speaker improves the model's ability to minimize timbre leakage. However, in datasets with massive user samples where each speaker has only 1-2 samples, the problem of timbre leakage becomes significantly prominent.</p>
 
 <table>
-  <tr><th>Row/Column</th><th>Column 1</th><th>Column 2</th><th>Audio 1</th><th>Audio 2</th><th>Audio 3</th><th>Audio 4</th></tr>
-  <tr><td rowspan="2">Rows 1 & 2</td><td rowspan="6"><audio controls src="Samples/045_17_0.wav"></audio></td><td><audio controls src="audio1.mp3"></audio></td><td><audio controls src="audio2.mp3"></audio></td><td><audio controls src="audio3.mp3"></audio></td><td><audio controls src="audio4.mp3"></audio></td></tr>
-  <tr><td><audio controls src="audio5.mp3"></audio></td><td><audio controls src="audio6.mp3"></audio></td><td><audio controls src="audio7.mp3"></audio></td><td><audio controls src="audio8.mp3"></audio></td></tr>
-  <tr><td rowspan="2">Rows 3 & 4</td><td><audio controls src="audio9.mp3"></audio></td><td><audio controls src="audio10.mp3"></audio></td><td><audio controls src="audio11.mp3"></audio></td><td><audio controls src="audio12.mp3"></audio></td></tr>
-  <tr><td><audio controls src="audio13.mp3"></audio></td><td><audio controls src="audio14.mp3"></audio></td><td><audio controls src="audio15.mp3"></audio></td><td><audio controls src="audio16.mp3"></audio></td></tr>
-  <tr><td rowspan="2">Rows 5 & 6</td><td><audio controls src="audio17.mp3"></audio></td><td><audio controls src="audio18.mp3"></audio></td><td><audio controls src="audio19.mp3"></audio></td><td><audio controls src="audio20.mp3"></audio></td></tr>
-  <tr><td><audio controls src="audio21.mp3"></audio></td><td><audio controls src="audio22.mp3"></audio></td><td><audio controls src="audio23.mp3"></audio></td><td><audio controls src="audio24.mp3"></audio></td></tr>
+  <tr><th></th><th>Target Speaker</th><th>Source Wav</th><th>result with pitch-convert</th><th>result without pitch-convert</th></tr>
+  <tr><td rowspan="2">Dataset A</td><td rowspan="6"><audio controls src="Samples/045_17_0.wav"></audio></td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (7).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (8).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (6).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (7).wav"></audio></td></tr>
+  <tr><td rowspan="2">Dataset B</td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (9).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (10).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (8).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (9).wav"></audio></td></tr>
+  <tr><td rowspan="2">KM4096+DatasetB</td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (11).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (12).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (10).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (11).wav"></audio></td></tr>
 </table>
 
 <!-- Repeat the table structure for two more tables -->
+
+<p class="bold" style="margin-top: 40px;">Ablation study 2</p>
+<p class="left-align">Our proposed method can resolve the timbre leakage issue, but it is necessary to determine which layer of HuBERT features to use.</p>
+
+<table style="margin-top: 20px;">
+  <tr><th></th><th>Source Wav</th><th>Sing reconstructed only by Hubert features</th></tr>
+  <tr><td rowspan="2">H22</td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/reco_1759092_2975658733737046806_done_5_16k (5).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/reco_1774425_2710217281578001017_0_done_1_16k (4).wav"></audio></td></tr>
+  <tr><td rowspan="2">H24</td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/reco_1759092_2975658733737046806_done_5_16k (4).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/reco_1774425_2710217281578001017_0_done_1_16k (5).wav"></audio></td></tr>
+</table>
+<table style="margin-top: 20px;">
+  <tr><th></th><th>Target Speaker</th><th>Source Wav</th><th>result with pitch-convert</th><th>result without pitch-convert</th></tr>
+  <tr><td rowspan="2">H22+KM4096</td><td rowspan="6"><audio controls src="Samples/045_17_0.wav"></audio></td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (13).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (14).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (12).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (13).wav"></audio></td></tr>
+  <tr><td rowspan="2">H24+KM4096</td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (15).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (16).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (14).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (15).wav"></audio></td></tr>
+</table>
+
+
+<p class="bold" style="margin-bottom: 0;">Final Result</p>
+<!-- <p class="left-align"></p> -->
+
+
+<table style="margin-top: 20px;">
+  <tr><th></th><th>Target Speaker</th><th>Source Wav</th><th>result with pitch-convert</th><th>result without pitch-convert</th></tr>
+  <tr><td rowspan="2">Our Proposal <br> H22+KM4096</td><td rowspan="6"><audio controls src="Samples/045_17_0.wav"></audio></td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (17).wav"></audio></td><td><audio controls src="Samples/vc_1759092_2975658733737046806_done_5_16k (18).wav"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (16).wav"></audio></td><td><audio controls src="Samples/vc_1774425_2710217281578001017_0_done_1_16k (17).wav"></audio></td></tr>
+
+  <tr><td rowspan="2">ContentVC <br> +SO-VITS-SVC </td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="1759532_4319384471748959939_done_0_16k (2).wav"></audio></td><td><audio controls src="audio3.mp3"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="audio6.mp3"></audio></td><td><audio controls src="audio7.mp3"></audio></td></tr>
+  <tr><td rowspan="2">FreeVC</td><td><audio controls src="Samples/1759092_2975658733737046806_done_5_16k (2).wav"></audio></td><td><audio controls src="audio10.mp3"></audio></td><td><audio controls src="audio11.mp3"></audio></td></tr>
+  <tr><td><audio controls src="Samples/1774425_2710217281578001017_0_done_1_16k (1).wav"></audio></td><td><audio controls src="audio14.mp3"></audio></td><td><audio controls src="audio15.mp3"></audio></td></tr>
+</table>
+
+
+
+
 
 </body>
 </html>
